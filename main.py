@@ -1,16 +1,13 @@
-# This is a sample Python script.
+from src.data_loader import load_dataset
+from src.data_split import split_data
+from src.vocabulary import build_vocabulary
 
-# Press Shift+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
+documents, labels = load_dataset()
 
+# split the dataset into training and testing sets.
+x_train, y_train, x_test, y_test = split_data(documents, labels)
 
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
+vocabulary = build_vocabulary(x_train)
 
-
-# Press the green button in the gutter to run the script.
-if __name__ == '__main__':
-    print_hi('PyCharm')
-
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+print("Vocabulary size:", len(vocabulary))
+print("First 10 words:", vocabulary[:10])

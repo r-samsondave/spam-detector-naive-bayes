@@ -1,7 +1,7 @@
 def load_dataset():
     documents = []
     labels = []
-    with open("../data/raw/sms+spam+collection/SMSSpamCollection", "r") as file:
+    with open("data/raw/sms+spam+collection/SMSSpamCollection", "r") as file:
 
         for line in file:
             line = line.strip()

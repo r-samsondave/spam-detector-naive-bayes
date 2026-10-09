@@ -10,6 +10,7 @@ def split_data(documents, labels):
 
     # zipping and shuffling dataset
     dataset = list(zip(documents, labels))
+    random.seed(42) # 42 is just a seed
     random.shuffle(dataset)
 
     # calculation of train size
@@ -31,8 +32,5 @@ def split_data(documents, labels):
 
     return x_train, y_train, x_test, y_test
 
-
-
-print(split_data(documents, labels))
 
 
